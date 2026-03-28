@@ -39,3 +39,22 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI/dev tools
+.claude/settings.local.json
+.serena/
+testsprite_tests/tmp/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+
+# Node.js extras
+dist/
+.cache/
+.turbo/

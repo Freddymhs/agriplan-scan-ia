@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AgriPlan Scan IA
 
-## Getting Started
+PWA para identificar especies de plantas y diagnosticar su estado de salud mediante análisis de imagen con IA. Parte del ecosistema AgriPlan, pero independiente (sin backend compartido, sin Supabase, sin dependencia de API).
 
-First, run the development server:
+## Tech Stack
+
+- **Framework:** Next.js 16 App Router + React 19 + TypeScript strict
+- **Styling:** TailwindCSS 4
+- **IA (MVP):** Vercel AI SDK (`ai` + `@ai-sdk/openai`) — GPT-4o Vision
+- **Storage:** IndexedDB (Dexie.js) para historial local
+- **Estado:** Zustand
+- **PWA:** @ducanh2912/next-pwa (service worker para assets, NO datos)
+- **Deploy:** Vercel
+
+## Setup
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+pnpm dev          # Dev server en localhost:3000
+pnpm build        # Build de producción
+pnpm start        # Servir build de producción
+pnpm lint         # ESLint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estructura
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+├── app/              # Pages y Route Handlers (App Router)
+├── components/       # Componentes UI
+├── hooks/            # Hooks de estado y lógica
+├── lib/
+│   ├── db/           # Schema y helpers Dexie.js
+│   ├── constants/    # Constantes de la app
+│   └── utils/        # Utilidades compartidas
+└── types/            # Interfaces TypeScript
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Funcionalidades (MVP)
 
-## Learn More
+- Captura de foto (cámara nativa o galería)
+- Identificación de especie vía GPT-4o Vision
+- Diagnóstico de salud (enfermedad, deficiencia, plaga, estrés)
+- Recomendaciones en español
+- Historial local de análisis (IndexedDB)
+- Alertas basadas en diagnóstico
+- PWA instalable
 
-To learn more about Next.js, take a look at the following resources:
+## Estado
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+En desarrollo inicial (scaffold).

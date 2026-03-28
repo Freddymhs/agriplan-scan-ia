@@ -1,0 +1,21 @@
+{
+  "framework": "Next.js 16+ App Router",
+  "rendering": "Hybrid (RSC default + CSR interactivo)",
+  "serverComponents": "Hybrid",
+  "routes": "Flat (/, /scan/[id], /settings)",
+  "middleware": "None (MVP)",
+  "dataFetching": "Route Handlers (Vercel AI SDK) + Dexie.js local",
+  "pattern": "Simple (hooks/lib, 3 rutas)",
+  "designPatterns": ["Custom Hooks", "Facade (Dexie helpers)", "Repository (db/)"],
+  "security": {
+    "inputValidation": "Zod schema en Route Handler",
+    "secrets": ".env.local (OPENAI_API_KEY)"
+  },
+  "resilience": "Timeout 10s Route Handler + error UI si GPT falla",
+  "testing": "Vitest (unit) + Playwright (E2E)",
+  "deployment": "Vercel",
+  "database": "IndexedDB (Dexie.js) — sin BD server",
+  "observability": "Console logger centralizado",
+  "externalAPIs": ["OpenAI GPT-4o Vision (via Vercel AI SDK)"],
+  "specialFeatures": ["PWA instalable", "IndexedDB (Dexie.js)", "Cámara (getUserMedia)", "Offline historial"]
+}
