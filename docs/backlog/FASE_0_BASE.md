@@ -4,6 +4,18 @@
 **Prioridad**: Alta
 **Dependencias**: Ninguna
 
+## Orden de ejecución
+
+> Las tareas de esta fase tienen dependencias internas. Ejecutar en este orden:
+
+1. Tarea 4 — crea la estructura de carpetas que el resto necesita
+2. Tarea 5 — variables de entorno antes de cualquier código
+3. Tarea 3 — instala dependencias antes de usarlas
+4. Tarea 6 — logger antes de cualquier hook o componente
+5. Tarea 7 — Zustand store antes de cualquier hook que lo consuma
+6. Tarea 1 — PWA (usa next-pwa ya instalado)
+7. Tarea 2 — layout base
+
 ## Tareas
 
 ### Tarea 1: Configurar PWA
@@ -70,6 +82,15 @@
   3. En producción: silenciar `info` y `warn`, solo `error`
   4. Exportar instancia singleton
 
+### Tarea 7: Zustand store global
+
+- Archivo: `src/hooks/useAppStore.ts` (crear)
+- Que hacer:
+  1. Estado global: `currentScanBlob`, `scanStatus`, `lastResult`
+  2. Acciones: `setScanBlob`, `clearScan`, `setStatus`
+  3. Solo estado efímero de UI — datos persistentes van a Dexie
+  4. Mantener mínimo: no duplicar estado de Dexie
+
 ## Criterios de Aceptacion
 
 - [ ] `pnpm build` pasa sin errores
@@ -78,3 +99,4 @@
 - [ ] Layout responde a mobile-first (320px–768px)
 - [ ] Variables de entorno documentadas en `.env.example`
 - [ ] Logger funcional, sin `console.log` directo en el código
+- [ ] Zustand store creado y tipado antes de FASE_1

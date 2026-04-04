@@ -4,6 +4,14 @@
 **Prioridad**: Media
 **Dependencias**: FASE_6
 
+## Orden de ejecución
+
+1. Tarea 1 — configurar Vitest (sin esto no corren 2 ni 3)
+2. Tarea 2 — tests unitarios de utilidades
+3. Tarea 3 — tests unitarios de hooks
+4. Tarea 4 — configurar Playwright (sin esto no corre 5)
+5. Tarea 5 — tests E2E
+
 ## Tareas
 
 ### Tarea 1: Configurar Vitest

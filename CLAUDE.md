@@ -51,6 +51,7 @@ src/
 ```
 
 **Key patterns:**
+
 - RSC by default. `"use client"` only where interaction is required (camera, scan UI, history list).
 - Route Handler `/api/scan` receives FormData with image, calls `generateObject()` from Vercel AI SDK.
 - All IndexedDB access through Dexie helpers — never raw IndexedDB in components.
@@ -59,7 +60,7 @@ src/
 
 ## Data Model
 
-Four core entities stored in IndexedDB (Dexie): `Plant`, `Scan`, `ScanResult`, `Alert`. Full schemas are in `CONCEPTO.md`.
+Four core entities stored in IndexedDB (Dexie): `Plant`, `Scan`, `ScanResult`, `Alert`. Full schemas are in `docs/CONCEPTO.md`.
 
 ## Key Constraints
 

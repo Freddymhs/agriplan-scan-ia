@@ -46,14 +46,13 @@
   4. No mostrar si ya está instalada (`display-mode: standalone`)
   5. Recordar dismissal en localStorage (no mostrar por 7 días)
 
-### Tarea 5: Zustand store global
+### Tarea 5: Verificar Zustand store global
 
-- Archivo: `src/hooks/useAppStore.ts` (crear)
+- Archivo: `src/hooks/useAppStore.ts` (revisar — creado en FASE_0)
 - Que hacer:
-  1. Estado global: `currentScanBlob`, `scanStatus`, `lastResult`
-  2. Acciones: `setScanBlob`, `clearScan`, `setStatus`
-  3. Solo estado efímero de UI — datos persistentes van a Dexie
-  4. Mantener mínimo: no duplicar estado de Dexie
+  1. Confirmar que el store sigue siendo mínimo tras todas las fases anteriores
+  2. Eliminar cualquier estado que haya quedado duplicado en Dexie
+  3. Verificar que los componentes de settings, header y nav consumen el store correctamente sin añadir slices innecesarios
 
 ### Tarea 6: Manejo de errores global
 

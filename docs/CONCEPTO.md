@@ -153,10 +153,10 @@ Todo vive en una sola página. Lista de plantas, alertas y timeline son seccione
 ```typescript
 interface Plant {
   id: string;
-  name: string;           // "Mi tomatera del patio"
-  species: string;        // "Solanum lycopersicum"
+  name: string; // "Mi tomatera del patio"
+  species: string; // "Solanum lycopersicum"
   createdAt: string;
-  thumbnailBlob: Blob;    // Última foto
+  thumbnailBlob: Blob; // Última foto
 }
 
 interface Scan {
@@ -169,10 +169,10 @@ interface Scan {
 }
 
 interface ScanResult {
-  label: string;          // "Tomato___Late_blight" o nombre libre de GPT
-  score: number;          // 0.92
+  label: string; // "Tomato___Late_blight" o nombre libre de GPT
+  score: number; // 0.92
   category: "species" | "disease" | "healthy";
-  displayName: string;    // "Tizón tardío del tomate"
+  displayName: string; // "Tizón tardío del tomate"
   recommendation: string; // "Aplicar fungicida..."
 }
 
@@ -206,9 +206,9 @@ interface Alert {
 
 ```typescript
 // src/app/api/scan/route.ts
-import { generateObject } from "ai"
-import { openai } from "@ai-sdk/openai"
-import { z } from "zod"
+import { generateObject } from "ai";
+import { openai } from "@ai-sdk/openai";
+import { z } from "zod";
 
 const ScanResultSchema = z.object({
   species: z.string(),
@@ -219,14 +219,14 @@ const ScanResultSchema = z.object({
   severity: z.enum(["none", "low", "medium", "high", "critical"]),
   recommendation: z.string(),
   displayName: z.string(),
-})
+});
 
 export async function POST(request: Request) {
-  const formData = await request.formData()
-  const image = formData.get("image") as File
+  const formData = await request.formData();
+  const image = formData.get("image") as File;
 
-  const imageBuffer = Buffer.from(await image.arrayBuffer())
-  const base64Image = imageBuffer.toString("base64")
+  const imageBuffer = Buffer.from(await image.arrayBuffer());
+  const base64Image = imageBuffer.toString("base64");
 
   const result = await generateObject({
     model: openai("gpt-4o"),
@@ -246,10 +246,11 @@ export async function POST(request: Request) {
         ],
       },
     ],
-    system: "Eres un agrónomo experto en identificación de plantas y diagnóstico de enfermedades. Especializas en cultivos de zonas áridas del norte de Chile (Arica): tuna, pitahaya, higuera, olivo, guayaba, dátil. Responde siempre en español.",
-  })
+    system:
+      "Eres un agrónomo experto en identificación de plantas y diagnóstico de enfermedades. Especializas en cultivos de zonas áridas del norte de Chile (Arica): tuna, pitahaya, higuera, olivo, guayaba, dátil. Responde siempre en español.",
+  });
 
-  return Response.json(result.object)
+  return Response.json(result.object);
 }
 ```
 

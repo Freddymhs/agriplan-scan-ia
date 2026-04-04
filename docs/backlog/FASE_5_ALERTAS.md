@@ -4,17 +4,24 @@
 **Prioridad**: Media
 **Dependencias**: FASE_3, FASE_4
 
+## Orden de ejecución
+
+1. Tarea 1 — crear `generateAlerts()` + modificar `useScan` para llamarla
+2. Tarea 2 — hook `useAlerts` (usa helpers de Dexie de FASE_1)
+3. Tarea 3 — componentes UI (consumen el hook)
+
 ## Tareas
 
 ### Tarea 1: Generación automática de alertas
 
 - Archivo: `src/lib/utils/alerts.ts` (crear)
+- Archivo: `src/hooks/useScan.ts` (**modificar** — agregar llamada a generateAlerts)
 - Que hacer:
   1. Función `generateAlerts(scan: Scan, result: ScanResult, plant?: Plant): Alert[]`
   2. Si `healthStatus !== "healthy"` → alert `disease_detected` con severidad mapeada
   3. Si planta tiene scan anterior con misma enfermedad pero menor severidad → alert `progression`
   4. Severidad: healthy→none, low→low, medium→medium, high/critical→high+action_required
-  5. Llamar automáticamente después de cada scan exitoso (desde `useScan`)
+  5. En `useScan.ts`: después del guardado en Dexie, llamar `generateAlerts()` y persistir alerts
 
 ### Tarea 2: Hook de alertas
 

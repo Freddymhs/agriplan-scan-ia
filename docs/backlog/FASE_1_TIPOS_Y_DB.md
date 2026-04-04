@@ -4,6 +4,13 @@
 **Prioridad**: Alta
 **Dependencias**: FASE_0
 
+## Orden de ejecución
+
+1. Tarea 1 — tipos TypeScript (schema Dexie y helpers los importan)
+2. Tarea 2 — schema Dexie (usa los tipos)
+3. Tarea 3 — helpers CRUD (usan schema y tipos)
+4. Tarea 4 — utilidades de storage (independiente, pero usa constantes de Tarea 3)
+
 ## Tareas
 
 ### Tarea 1: Definir tipos TypeScript
