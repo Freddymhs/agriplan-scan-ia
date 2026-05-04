@@ -72,3 +72,9 @@ Four core entities stored in IndexedDB (Dexie): `Plant`, `Scan`, `ScanResult`, `
 ## Ecosystem Context
 
 This app is part of the AgriPlan ecosystem (see parent `CLAUDE.md` at `project-agricultura/CLAUDE.md`) but shares no backend, database, or auth with the PWA or API. Future integration is possible (shared crop catalog, sending diagnoses to Portal).
+
+## Feature futura: Bitácora de campo
+
+Scan IA podría evolucionar a bitácora de campo: foto + geolocalización + diagnóstico vinculado al cultivo del usuario.
+Requiere: sistema de cuentas (Supabase Auth), relación con proyectos/zonas de la PWA, integración con la instancia Supabase compartida del ecosistema. Implica que dejaría de ser independiente.
+No para el MVP actual. Documentado para no perder la idea.
