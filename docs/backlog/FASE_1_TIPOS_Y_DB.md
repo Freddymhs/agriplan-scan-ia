@@ -23,7 +23,7 @@
   4. Definir `Alert` interface (id, plantId, scanId, type, severity, message, createdAt, dismissed)
   5. Definir enums: `ScanSource`, `AlertType`, `AlertSeverity`, `HealthStatus`, `ScanCategory`
   6. Schemas Zod correspondientes para validación en Route Handler
-- Referencia: `CONCEPTO.md` sección "Modelo de datos"
+- Referencia: `_CONCEPTO.md` sección "Modelo de datos"
 
 ### Tarea 2: Configurar Dexie.js schema
 

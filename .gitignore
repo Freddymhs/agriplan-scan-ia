@@ -43,6 +43,7 @@ next-env.d.ts
 # AI/dev tools
 .claude/settings.local.json
 .serena/
+.codegraph/
 testsprite_tests/tmp/
 
 # IDEs
@@ -58,3 +59,6 @@ Thumbs.db
 dist/
 .cache/
 .turbo/
+
+# Cursor IDE (side-effect de CodeGraph init)
+.cursor/

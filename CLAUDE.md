@@ -60,7 +60,7 @@ src/
 
 ## Data Model
 
-Four core entities stored in IndexedDB (Dexie): `Plant`, `Scan`, `ScanResult`, `Alert`. Full schemas are in `docs/CONCEPTO.md`.
+Four core entities stored in IndexedDB (Dexie): `Plant`, `Scan`, `ScanResult`, `Alert`. Full schemas are in `docs/_CONCEPTO.md`.
 
 ## Key Constraints
 

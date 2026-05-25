@@ -50,9 +50,14 @@ Llenar después de probar cada feature. Usar como referencia con `/run-browser_t
 
 ## Concepto del Producto
 
-[`../CONCEPTO.md`](../CONCEPTO.md) — documento de concepto completo: modelo de datos, flujos, stack, decisiones y roadmap v2. Sirve como referencia de producto y se usa como PRD al configurar TestSprite.
+[`../_CONCEPTO.md`](../_CONCEPTO.md) — documento de concepto completo: modelo de datos, flujos, stack, decisiones y roadmap v2. Sirve como referencia de producto y se usa como PRD al configurar TestSprite.
 
 ## Decisiones Técnicas
 
-Carpeta [`../decisions/`](../decisions/) — documentar aquí decisiones arquitectónicas cuando surjan durante el desarrollo.
+Carpeta [`../decisions/`](../decisions/) — decisiones arquitectónicas vigentes.
 Formato: `DECISION_[TEMA].md` — explica el POR QUÉ, no el QUÉ.
+
+| Decisión                                                                           | Status     |
+| ---------------------------------------------------------------------------------- | ---------- |
+| [Persistencia con Dexie/IndexedDB](../decisions/DECISION_DEXIE_INDEXEDDB.md)       | ✅ Vigente |
+| [Vercel AI SDK (no Anthropic SDK directo)](../decisions/DECISION_VERCEL_AI_SDK.md) | ✅ Vigente |

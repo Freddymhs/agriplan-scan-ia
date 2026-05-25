@@ -34,7 +34,7 @@
   7. Retornar `Response.json(result.object)`
   8. Timeout: 10s (límite Vercel free tier)
   9. Manejo de errores: API key faltante, timeout, rate limit, respuesta malformada
-- Referencia: `CONCEPTO.md` sección "Route Handler: /api/scan"
+- Referencia: `_CONCEPTO.md` sección "Route Handler: /api/scan"
 
 ### Tarea 3: Hook de scan
 
